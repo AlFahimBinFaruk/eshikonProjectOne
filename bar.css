@@ -1,0 +1,126 @@
+.cf:after {
+    content: "";
+    display: table;
+}
+
+.cf:after {
+    clear: both;
+}
+
+.cf {
+    *zoom: 1;
+}
+
+.menu,
+.submenu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    z-index: 999;
+}
+
+.menu {
+    width: fit-content;
+}
+
+.menu>li {
+    float: left;
+    position: relative;
+    transform: skewX(15deg)
+}
+
+.menu a {
+    display: block;
+    color: #fff;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-family: Arial, Helvetica;
+}
+
+.menu li:hover {
+    background: black;
+
+}
+
+.menu>li>a {
+    transform: skewX(-15deg);
+    padding: 1em 2em;
+}
+
+.submenu {
+    position: absolute;
+    width: 200px;
+    left: 50%;
+    margin-left: -100px;
+    transform: skewX(-15deg);
+    transform-origin: left top;
+}
+
+.submenu li {
+    background-color: #34495e;
+    position: relative;
+    overflow: hidden;
+}
+
+.submenu>li>a {
+    padding: 1em 2em;
+}
+
+.submenu>li:after {
+    content: '';
+    position: absolute;
+    top: -125%;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 0 50px rgba(0, 0, 0, .9)
+}
+
+.submenu>li {
+    transform: skewX(-10deg) translateX(0);
+}
+
+.submenu>li>a {
+    transform: skewX(-10deg);
+    font-size: 0.6rem;
+
+}
+
+.submenu>li :after {
+    right: -50%;
+    transform: skewX(-10deg) rotate(2deg);
+}
+
+.submenu>li:hover {
+    transform: skewX(-10deg) translateX(0);
+}
+
+.submenu,
+.submenu li {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.submenu li {
+    transform: .4s ease-out transform;
+}
+
+.menu>li:hover .submenu,
+.menu>li:hover .submenu li {
+    opacity: 1;
+    visibility: visible;
+}
+
+.submenu>li,
+.submenu>li>a:hover {
+    transition: .5s;
+}
+
+.submenu>li>a:hover {
+    transform: skewX(-10deg);
+}
+
+@media screen and (max-width:720px) {
+    .submenu {
+        left: 172%;
+    }
+}

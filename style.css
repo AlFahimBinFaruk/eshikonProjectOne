@@ -401,6 +401,52 @@ p.gray {
 }
 
 
+.bottmowr {
+    color: gray;
+    display: flex;
+    padding: 0 2rem;
+    margin-top: 2rem;
+}
+
+.left ul li {
+    list-style: none;
+    line-height: 2.5rem;
+    border-left: 2px solid;
+    padding-left: 0.8rem;
+    transition: 0.6s;
+}
+
+
+.left ul li:hover {
+    background: gray;
+    color: #64ffda;
+    cursor: pointer;
+}
+
+.right {
+    margin-left: 4rem;
+}
+
+.rightbottom ul li {
+    position: relative;
+    list-style: none;
+    word-break: break-all;
+    margin-bottom: 0.5rem;
+}
+
+.rightbottom  ul li::before {
+    content: "▹";
+    position: absolute;
+    left: -21px;
+    color: var(--green);
+}
+
+.workcont{
+    width: 60%;
+    margin: auto
+}
+
+
 @media screen and (max-width:720px) {
     .container-fluid.d-flex {
         margin: 0 1rem;
@@ -436,5 +482,38 @@ p.gray {
     
     .conleft h1 {
         flex-direction: column;
+    }
+  
+    .workcont {
+        width: 100%;
+        margin-top: 4rem!important;
+    }
+    
+    .bottmowr {
+        flex-direction: column;
+    }
+    
+    .left ul {
+        display: flex;
+        overflow-x: scroll;
+    }
+    
+    .left ul li {
+        border-left: none;
+        margin-right: 3rem;
+    }
+    
+    .bottmowr {
+        padding: 0;
+    }
+    
+    .right {
+        margin: 0;
+        padding: 2rem;
+    }
+    
+    .left {
+        width: 80%;
+        margin: auto;
     }
 }
